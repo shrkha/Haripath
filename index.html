@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>श्री ज्ञानदेव हरिपाठ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <div id="intro-page">
+      <div style="text-align: center; margin-bottom: 1.2em;">
+        <div style="font-size: 2em; font-weight: bold; margin-bottom: 0.3em;">श्रीज्ञानदेवांचा हरिपाठ</div>
+        <div class="subtitle" style="font-size: 1.2em; font-weight: bold; margin-bottom: 1em;">सुखे म्हणो येती वेद</div>
+      </div>
+      <div style="margin:1.2em 0 1.5em 0;line-height:1.7;font-size:1.08em">
+        <p>वेदांचा पाठ करताना वैदिक संहितेचा पाठ्यक्रम जसाचे तसा म्हणावयाचा असतो कारण ते मंत्र आहेत; परंतु ते वेदमंत्र समजून घेण्यासाठी व त्यांचा यज्ञादि कर्मात विनियोग करण्यासाठी मात्र अर्थक्रमानुसार अभ्यास अभिप्रेत आहे; म्हणूनच वैदिक ऋषींनी "ब्राह्मण ग्रंथांची" रचना केली.</p>
+        <ol style="margin-left:1.2em">
+          <li>श्रीगुलाबराव महाराजांच्या धारणेनुसार हरिपाठ म्हणजे माउलीच्या मुखातून निघालेले समाधिभाषेतील वेदमंत्रच आहेत.</li>
+          <li>सर्वांनी नित्याचा नेम म्हणून करावयाचा हरिपाठ परंपरेनुसार पाठक्रमानेच करायला हवा; पण अर्थ समजून घेण्यासाठी श्रीगुलाबराव महाराजांनी सुचविलेला अर्थक्रम महत्वाचा आहे.</li>
+          <li>दुसरा विशेष म्हणजे प्रत्येक अभंगात कोणता विशेष सिद्धान्त आलेला आहे ते सांगण्यासाठी श्रीमहाराजांनी प्रतिज्ञा लिहिल्या आहेत. (प्रतिज्ञा = प्रमेयाचा निश्चय करणारे विधान) म्हणून अभ्यासकांच्या सोईसाठी अभंगासह प्रतिज्ञा मुद्रित करणणे उचित आहे.</li>
+        </ol>
+      </div>
+      <div style="text-align: center; margin-bottom: 1.5em;">
+        <button id="goto-sequence" class="main-btn">पाठक्रम</button>
+        <button id="goto-arthkram" class="main-btn">अर्थक्रम</button>
+      </div>
+    </div>
+    <header style="display:none">
+      <h1>श्री ज्ञानदेव हरिपाठ</h1>
+    </header>
+    <div id="font-controls" style="display:none">
+      <button id="decrease-font" title="लहान">A-</button>
+      <button id="increase-font" title="मोठे">A+</button>
+      <button class="mode-toggle" id="toggle-mode" title="Dark/Light">🌙/☀️</button>
+      <label style="margin-left:1em;font-size:1em">
+        <input type="checkbox" id="pratidnya-check">
+        प्रतिज्ञा
+      </label>
+    </div>
+    <style>
+      .pratidnya-text { color: #b22222; font-weight: bold; margin-top: 1em; font-size: 1.05em; }
+      body.dark .pratidnya-text { color: #ffb347; }
+    </style>
+    <nav id="main-nav" style="display:none">
+      <button id="prev">⟨ </button>
+      <span id="page-indicator">1/30</span>
+      <button id="next"> ⟩</button>
+    </nav>
+    <main>
+      <div id="sequence-page" style="display:none">
+        <h2 style="text-align:center">पाठक्रम</h2>
+        <ol id="sequence-list" style="font-size:1.1em"></ol>
+        <div style="text-align:center;margin-top:1em">
+          <button id="show-arthkram">अर्थक्रम</button>
+        </div>
+      </div>
+
+      <div id="arthkram-page" style="display:none">
+        <h2 style="text-align:center">अर्थक्रम</h2>
+        <div style="overflow-x:auto">
+          <table id="arthkram-table" style="width:100%;max-width:600px;margin:auto;border-collapse:collapse;font-size:1em;background:rgba(255,255,255,0.7);">
+            <thead>
+              <tr style="background:#e6d3b3">
+                <th>अर्थक्रम</th>
+                <th>पाठक्रम</th>
+                <th>पंक्ती</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Filled by script.js -->
+            </tbody>
+          </table>
+        </div>
+        <div style="text-align:center;margin-top:1em">
+          <button id="show-sequence-from-arth">पाठक्रम</button>
+        </div>
+      </div>
+      <div id="content" style="display:none"></div>
+      <div id="content-nav-btns" style="display:none;text-align:center;margin-top:1.5em">
+        <button id="content-goto-sequence" class="main-btn">पाठक्रम</button>
+        <button id="content-goto-arthkram" class="main-btn">अर्थक्रम</button>
+      </div>
+    </main>
+    <!-- Removed extra पाठक्रम button -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
