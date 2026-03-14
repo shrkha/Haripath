@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>श्री ज्ञानदेव हरिपाठ</title>
+  <title>श्री ज्ञानदेवांचा हरिपाठ</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,15 +40,21 @@
         <input type="checkbox" id="pratidnya-check">
         प्रतिज्ञा
       </label>
+      <label style="margin-left:1em;font-size:1em">
+        <input type="checkbox" id="saralarth-check">
+        सरळ अर्थ
+      </label>
     </div>
     <style>
       .pratidnya-text { color: #b22222; font-weight: bold; margin-top: 1em; font-size: 1.05em; }
       body.dark .pratidnya-text { color: #ffb347; }
+      .saralarth-text { color: #1a7c2b; font-weight: bold; margin-top: 1em; font-size: 1.05em; }
+      body.dark .saralarth-text { color: #7cffb3; }
     </style>
     <nav id="main-nav" style="display:none">
-      <button id="prev">⟨ </button>
+      <button id="prev">⟨ मागे</button>
       <span id="page-indicator">1/30</span>
-      <button id="next"> ⟩</button>
+      <button id="next">पुढे ⟩</button>
     </nav>
     <main>
       <div id="sequence-page" style="display:none">
@@ -66,8 +72,8 @@
             <thead>
               <tr style="background:#e6d3b3">
                 <th>अर्थक्रम</th>
-                <th>पाठक्रम</th>
                 <th>पंक्ती</th>
+                <th>पाठक्रम</th>
               </tr>
             </thead>
             <tbody>
@@ -85,6 +91,7 @@
         <button id="content-goto-arthkram" class="main-btn">अर्थक्रम</button>
       </div>
     </main>
+    <!-- Removed extra पाठक्रम button -->
   </div>
   <script src="script.js"></script>
 </body>
